@@ -1,15 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "npm run build --workspace @school/frontend",
-  "outputDirectory": "frontend/dist",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite"
     }
-  ]
+  }
 }
