@@ -1,0 +1,1143 @@
+/* Basic Reset & Box-Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Or use a Google Font like 'Roboto' */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Global Styles --- */
+.section-padding {
+    padding: 60px 0;
+}
+
+.bg-light {
+    background-color: #e9e9e9;
+}
+
+h1, h2, h3, h4 {
+    color: #2c3e50; /* Dark blue/grey */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+
+p {
+    margin-bottom: 15px;
+    text-align: justify; /* Adjust if you prefer left-aligned */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #3498db; /* Blue */
+    color: #fff;
+    border: 1px solid #3498db;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #f39c12; /* Orange */
+    color: #fff;
+    border: 1px solid #f39c12;
+}
+
+.btn-secondary:hover {
+    background-color: #e67e22;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
+/* --- Header --- */
+.main-header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex; /* Horizontal navigation */
+    gap: 20px; /* Space between nav items */
+    align-items: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #3498db;
+}
+
+.nav-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('backround1.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.hero-section h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 800px;
+    text-align: center;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+/* --- Features Section --- */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); /* Responsive grid */
+    gap: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.feature-item {
+    background-color: #f9f8fc;
+    padding: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(36, 35, 35, 0.918);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-item img {
+    margin-bottom: 15px;
+    height: 80px;
+    width: 80px;
+}
+
+.feature-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* --- About Section (Two Columns) --- */
+.content-two-column {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to stack on small screens */
+    align-items: center;
+    gap: 40px;
+}
+
+.about-content, .about-image {
+    flex: 1; /* Allows them to take equal space */
+    min-width: 200px; /* Prevents shrinking too much */
+}
+
+.about-image img {
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-content h3 {
+    text-align: left; /* Override global h3 center for this section */
+}
+
+/* --- News & Events Section --- */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.news-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    overflow: hidden; /* Ensures image corners are rounded with border-radius */
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+.news-item h4 {
+    margin: 15px 15px 10px 15px;
+    text-align: left;
+}
+
+.news-item p {
+    padding: 0 15px 15px 15px;
+    font-size: 0.95em;
+    text-align: left;
+}
+
+.news-item .read-more {
+    display: block;
+    padding: 0 15px 15px 15px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-item .read-more:hover {
+    text-decoration: underline;
+}
+
+
+/* --- All Courses Section --- */
+.all-courses-section h2, .all-courses-section .section-intro-text {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.section-intro-text {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+}
+
+.course-grid {
+    display: grid;
+    /* On larger screens, 3 columns. On smaller, it will auto-fit. */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px; /* Space between course cards */
+    margin-top: 40px;
+}
+
+.course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures image corners are rounded */
+    display: flex; /* Use flexbox for content within card */
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px; /* Uniform height for all course images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.course-card .card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.course-card h3 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #3498db; /* Blue color for course titles */
+    font-size: 1.4em;
+}
+
+.course-card p {
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-align: left; /* Align description left */
+}
+
+.course-card ul {
+    list-style: none; /* Remove default list bullets */
+    margin-bottom: 20px;
+    padding-left: 0;
+    flex-grow: 1; /* Pushes button to the bottom if content varies */
+}
+
+.course-card ul li {
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.course-card ul li i { /* Styling for Font Awesome checkmark icon */
+    color: #27ae60; /* Green color for checkmark */
+    margin-right: 8px;
+    font-size: 0.8em;
+}
+
+.course-card .btn-small {
+    padding: 8px 15px; /* Smaller padding for card buttons */
+    font-size: 0.9em;
+    align-self: flex-start; /* Aligns button to the left within the card */
+    margin-top: auto; /* Pushes button to bottom if list items are short */
+}
+
+/* --- Responsive Design (Media Queries for courses) --- */
+
+@media (max-width: 992px) {
+    .course-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust columns for smaller screens */
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .course-grid {
+        grid-template-columns: 1fr; /* Single column on tablets/phones */
+        gap: 20px;
+    }
+    .all-courses-section h2 {
+        font-size: 2em;
+    }
+    .section-intro-text {
+        font-size: 1em;
+    }
+}
+
+/* --- Placement Section --- */
+.placement-section {
+    background-color: #f8f8f8; /* Light background for the section */
+}
+
+.placement-section h2, .placement-section .section-intro-text {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.placement-section .section-intro-text {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Placement Statistics Grid */
+.placement-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 4 columns on large, auto-fit on smaller */
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    text-align: center; /* Center content within grid cells */
+}
+
+.stat-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-bottom: 5px solid #3498db; /* A distinct border color */
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    text-align: center; /* Override global h3, just in case */
+}
+
+.stat-card p {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 0;
+    text-align: center; /* Override global p, just in case */
+}
+
+/* Testimonials Section */
+.placement-section h3 { /* Subheading for testimonials */
+    text-align: center;
+    margin-top: 50px; /* Space above testimonials */
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-size: 1.8em;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 columns on large, auto-fit on smaller */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    text-align: center;
+    display: flex; /* Use flexbox for internal alignment */
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes image circular */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #3498db; /* A small border around the image */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.testimonial-text {
+    font-size: 1em;
+    font-style: italic;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allows text to push author down if varied length */
+    text-align: center; /* Ensure text is centered within the card */
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.testimonial-company {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 0;
+}
+
+/* Call to Action for Placement Section */
+.placement-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd; /* Separator */
+}
+
+.placement-cta p {
+    font-size: 1.3em;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* --- Responsive Adjustments for Placement Section --- */
+
+@media (max-width: 992px) {
+    .placement-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust for 2-column on tablets */
+        gap: 15px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust for 2-column on tablets */
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .placement-section .section-intro-text {
+        font-size: 1em;
+    }
+    .placement-stats-grid {
+        grid-template-columns: 1fr; /* Single column on tablets/phones */
+        max-width: 300px; /* Constrain width of single column cards */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Single column on tablets/phones */
+        max-width: 400px; /* Constrain width of single column cards */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .testimonial-card {
+        padding: 25px;
+    }
+    .stat-card h3 {
+        font-size: 2em;
+    }
+    .stat-card p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .placement-section h2, .placement-section h3 {
+        font-size: 2em;
+    }
+    .placement-section .section-intro-text {
+        font-size: 0.95em;
+    }
+    .placement-cta p {
+        font-size: 1.1em;
+    }
+}
+
+/* --- Admissions Section --- */
+.admissions-section h2, .admissions-section .section-intro-text {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.admissions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Two columns on larger screens */
+    gap: 30px; /* Space between cards */
+    margin-top: 40px;
+    margin-bottom: 60px; /* Space before the CTA/Form */
+}
+
+.admissions-info-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.admissions-info-card h3 {
+    text-align: left; /* Align heading left within card */
+    color: #3498db;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+.admissions-info-card p,
+.admissions-info-card ol,
+.admissions-info-card ul {
+    text-align: left;
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    line-height: 1.7;
+    flex-grow: 1; /* Allows content to push button down if varied length */
+}
+
+.admissions-info-card ol,
+.admissions-info-card ul {
+    padding-left: 25px; /* Indent lists */
+}
+
+.admissions-info-card ol li,
+.admissions-info-card ul li {
+    margin-bottom: 10px;
+}
+
+.admissions-info-card .btn-small {
+    margin-top: auto; /* Pushes the button to the bottom of the card */
+    align-self: flex-start; /* Aligns button to the left within the card */
+}
+
+.admissions-cta {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 20px; /* Space above CTA text */
+    border-top: 1px solid #ddd; /* Separator line */
+}
+
+.admissions-cta h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 1.8em;
+}
+
+/* Specific styles for the admission form if different from general contact form */
+.admission-form-container {
+    max-width: 700px; /* Make the form a bit wider than general contact form */
+    margin: 0 auto 60px auto; /* Center it and add bottom margin */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.admission-form-container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #3498db;
+    font-size: 1.8em;
+}
+
+.admission-form-container .form-group input,
+.admission-form-container .form-group textarea,
+.admission-form-container .form-group select { /* Apply to select too */
+    padding: 14px; /* Slightly larger padding for better touch targets */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1em;
+}
+
+.admission-form-container .form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 0.85em;
+}
+
+
+/* --- Responsive Design for Admissions --- */
+
+@media (max-width: 992px) {
+    .admissions-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on tablets */
+        max-width: 500px; /* Limit width when stacked */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .admissions-section .section-intro-text {
+        font-size: 1em;
+    }
+
+    .admissions-info-card {
+        padding: 25px;
+    }
+
+    .admissions-info-card h3 {
+        font-size: 1.4em;
+    }
+
+    .admissions-info-card p,
+    .admissions-info-card ol,
+    .admissions-info-card ul {
+        font-size: 1em;
+    }
+
+    .admission-form-container {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .admissions-section h2 {
+        font-size: 2em;
+    }
+
+    .admissions-info-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+/* --- Contact Section (Form) --- */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.form-group textarea {
+    resize: vertical; /* Allows user to resize vertically */
+}
+
+.contact-form .btn-primary {
+    width: auto;
+    padding: 12px 30px;
+    cursor: pointer;
+}
+
+
+/* --- Login Page Specific Styles (for student-login.html and teacher-login.html) --- */
+
+/* Ensures the entire page has a consistent background and layout for centering content */
+.login-body {
+    display: flex;
+    flex-direction: column; /* Stacks header, main, and footer vertically */
+    min-height: 100vh; /* Makes sure the body takes at least the full viewport height */
+    background-color: #f0f2f5; /* Light grey background for login pages */
+    font-family: Arial, sans-serif; /* Ensure font consistency */
+    color: #333;
+}
+
+/* Styles for the main content area of the login page */
+.login-main {
+    flex-grow: 1; /* Allows this section to take up available space, pushing footer down */
+    display: flex;
+    align-items: center; /* Vertically centers the login box within the main area */
+    justify-content: center; /* Horizontally centers the login box within the main area */
+    padding: 20px; /* Add some padding around the login container */
+}
+
+/* Styles for the login form container/card */
+.login-section {
+    width: 100%; /* Take full width of its parent (.container) */
+    max-width: 450px; /* Limits the maximum width of the login box for better readability */
+    padding: 40px;
+    background-color: #fff; /* White background for the login card */
+    border-radius: 10px; /* Rounded corners for the card */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Centers the heading and form elements initially */
+}
+
+/* Heading inside the login section */
+.login-section h2 {
+    margin-bottom: 30px;
+    color: #3498db; /* Blue color, matching your primary button */
+    font-size: 2.2em; /* Slightly larger for prominence */
+}
+
+/* General form group styling (reused from your existing forms, but confirmed here) */
+.login-form .form-group {
+    margin-bottom: 25px; /* Spacing between form fields */
+    text-align: left; /* Align labels and inputs to the left within the form */
+}
+
+/* Labels for form inputs */
+.login-form .form-group label {
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+    display: block; /* Makes labels stack above inputs */
+}
+
+/* Input fields styling */
+.login-form .form-group input {
+    width: 100%; /* Inputs take full width of their container */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.1em;
+    box-sizing: border-box; /* Ensures padding doesn't add to element's total width */
+}
+
+/* Styling for "Remember Me" checkbox and "Forgot Password?" link */
+.login-form .form-options {
+    display: flex;
+    justify-content: space-between; /* Puts items at opposite ends */
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.95em;
+    flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+.login-form .form-options label {
+    display: flex; /* Allows checkbox and text to align horizontally */
+    align-items: center;
+    cursor: pointer;
+    color: #555;
+    font-weight: normal; /* Override bold from .form-group label */
+    margin-bottom: 0; /* Remove bottom margin if flex item */
+}
+
+.login-form .form-options input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1); /* Slightly enlarge checkbox for better usability */
+    cursor: pointer;
+    width: auto; /* Prevent checkbox from taking 100% width */
+}
+
+.login-form .forgot-password {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold; /* Make it stand out a bit */
+}
+
+.login-form .forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the Login button */
+.login-form .login-btn {
+    width: 100%; /* Button takes full width */
+    padding: 15px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Specific styling for primary/secondary buttons (already defined, just for context) */
+/*
+.btn-primary { background-color: #3498db; color: #fff; }
+.btn-primary:hover { background-color: #2980b9; }
+.btn-secondary { background-color: #f39c12; color: #fff; }
+.btn-secondary:hover { background-color: #e67e22; }
+*/
+
+
+/* Styling for "Don't have an account?" link */
+.login-form .signup-link {
+    font-size: 0.95em;
+    color: #777;
+    margin-top: 15px;
+}
+
+.login-form .signup-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Ensure header and footer adapt to login-body flex for consistent layout */
+.login-body .main-header,
+.login-body .main-footer {
+    flex-shrink: 0; /* Prevents them from shrinking if main content is large */
+    width: 100%; /* Ensure they span full width */
+}
+
+/* Adjust footer copyright text on login pages to be centered and not have a top border */
+.login-body .main-footer .container.copyright {
+    text-align: center;
+    border-top: none; /* Remove border from footer on this page */
+    padding-top: 0;
+    margin-top: 0;
+    padding-bottom: 20px; /* Add some padding at the bottom */
+}
+
+
+/* --- Responsive Adjustments for Login Page --- */
+
+@media (max-width: 768px) {
+    .login-section {
+        padding: 30px;
+        margin: 0 15px; /* Add some side margin on small screens to prevent sticking to edges */
+    }
+    .login-section h2 {
+        font-size: 2em;
+        margin-bottom: 25px;
+    }
+    .login-form .login-btn {
+        font-size: 1.1em;
+        padding: 12px;
+    }
+    .login-form .form-options {
+        /* On smaller screens, stack remember me and forgot password vertically */
+        flex-direction: column;
+        align-items: flex-start; /* Align them to the left */
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-section {
+        padding: 25px;
+    }
+    .login-section h2 {
+        font-size: 1.8em;
+    }
+    /* Smaller padding for form inputs on very small screens */
+    .login-form .form-group input {
+        padding: 10px;
+        font-size: 1em;
+    }
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #2c3e50; /* Dark blue/grey */
+    color: #ecf0f1; /* Light grey */
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px; /* Ensures columns don't get too narrow */
+    text-align: left;
+}
+
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #3498db;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.copyright p {
+    color: #bdc3c7;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* For screens smaller than 768px (tablets and small desktops) */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start; /* Align logo/title to left */
+    }
+
+    .logo {
+        width: 100%;
+        text-align: center; /* Center logo on smaller screens if desired */
+        margin-bottom: 15px;
+    }
+
+    .main-nav {
+        width: 100%;
+        display: none; /* Hide navigation by default on small screens */
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-nav.active {
+        display: flex; /* Show navigation when active (toggled by JS) */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1); /* For menu items */
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
+        position: absolute;
+        top: 25px;
+        right: 20px;
+    }
+
+    .hero-section {
+        padding: 80px 20px;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        margin: 0;
+    }
+
+    .content-two-column {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .about-content h3 {
+        text-align: center; /* Center heading when stacked */
+    }
+
+    .news-grid, .feature-grid {
+        grid-template-columns: 1fr; /* Single column layout for items */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer-col h4 {
+        text-align: center;
+    }
+
+    .footer-col ul {
+        padding-left: 0;
+    }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 40px 0;
+    }
+
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.5em; }
+
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-section {
+        padding: 60px 20px;
+    }
+}

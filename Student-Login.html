@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - Digital Mozo Institute</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body class="login-body">
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png.jpg" alt="School Logo">
+                    <h1>DigitalMozo Institute</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="academics.html">Academics</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="index.html#contact-section">Contact Us</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="toggle navigation">&#9776;</button>
+        </div>
+    </header>
+
+    <main class="login-main">
+        <section class="login-section section-padding">
+            <div class="container login-container">
+                <h2>Student Login</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="username">Roll Number / Username:</label>
+                        <input type="text" id="username" name="username" required autocomplete="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required autocomplete="current-password">
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Remember Me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary login-btn">Login</button>
+                    <p class="signup-link">Don't have an account? <a href="#">Register Now</a></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container copyright">
+            <p>&copy; 2025 Digital Mozo Institute. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Basic JavaScript for mobile navigation toggle (re-used from index.html)
+        document.addEventListener('DOMContentLoaded', function () {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function () {
+                    mainNav.classList.toggle('active');
+                });
+            }
+
+            // You can add simple form validation here with JavaScript if you wish,
+            // but for a purely front-end PBL, the visual form is sufficient.
+            const loginForm = document.querySelector('.login-form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent actual form submission for now
+                    alert('Login form submitted! (This is a front-end simulation)');
+                    // In a real application, you would send this data to a server for authentication.
+                    // After successful login, you would redirect the user to their dashboard.
+                    // window.location.href = 'student-dashboard.html'; // Example redirect
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
