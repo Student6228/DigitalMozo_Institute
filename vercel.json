@@ -1,19 +1,15 @@
 {
-  "version": 2,
-  "services": {
-    "frontend": {
-      "root": "frontend",
-      "framework": "vite"
-    }
-  },
+  "framework": "vite",
+  "buildCommand": "npm run build --workspace @school/frontend",
+  "outputDirectory": "frontend/dist",
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api"
+      "destination": "/api/index.ts"
     },
     {
-      "source": "/((?!assets/|.*\\..*).*)",
-      "destination": "/frontend/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
