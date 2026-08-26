@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "services": {
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite",
+      "routes": [
+        {
+          "handle": "filesystem"
+        },
+        {
+          "src": "/.*",
+          "dest": "/index.html"
+        }
+      ]
+    }
+  }
+}
