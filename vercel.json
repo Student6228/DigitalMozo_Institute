@@ -1,7 +1,5 @@
 {
   "version": 2,
-  "buildCommand": "npm run build --workspace @school/frontend",
-  "outputDirectory": "frontend/dist",
   "rewrites": [
     {
       "source": "/api/(.*)",
