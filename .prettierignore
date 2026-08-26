@@ -1,0 +1,12 @@
+.tools/
+.npm-cache/
+node_modules/
+**/dist/
+**/coverage/
+legacy/
+
+# Original static site; preserved until migration is complete.
+/index.html
+/Student-Login.html
+/Teacher-Login.html
+/style.css

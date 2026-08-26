@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+apps/api/src/generated/prisma/
+.tools/
+.npm-cache/
+.vite/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

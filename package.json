@@ -1,0 +1,42 @@
+{
+  "name": "school-management-system",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DigitalMozo Institute school management web and API workspace",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=26.8.0-0"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names FRONTEND,BACKEND --prefix-colors cyan,magenta \"npm run dev --workspace @school/frontend\" \"npm run dev --workspace @school/backend\"",
+    "dev:frontend": "npm run dev --workspace @school/frontend",
+    "dev:backend": "npm run dev --workspace @school/backend",
+    "build": "npm run build --workspace @school/backend && npm run build --workspace @school/frontend",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "concurrently": "10.0.5",
+    "eslint": "10.9.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.5",
+    "globals": "17.11.0",
+    "prettier": "3.9.6",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.68.0",
+    "vitest": "4.1.11"
+  },
+  "allowScripts": {
+    "prisma@7.10.0": true,
+    "@prisma/engines@7.10.0": true,
+    "esbuild@0.28.2": true
+  }
+}
