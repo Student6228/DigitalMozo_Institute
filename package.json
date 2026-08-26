@@ -9,7 +9,7 @@
     "backend"
   ],
   "engines": {
-    "node": ">=26.8.0-0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "concurrently --kill-others-on-fail --names FRONTEND,BACKEND --prefix-colors cyan,magenta \"npm run dev --workspace @school/frontend\" \"npm run dev --workspace @school/backend\"",
