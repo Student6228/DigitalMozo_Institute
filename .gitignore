@@ -12,3 +12,5 @@ apps/api/src/generated/prisma/
 .DS_Store
 Thumbs.db
 *.tsbuildinfo
+
+.vercel
