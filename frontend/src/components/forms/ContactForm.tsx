@@ -22,6 +22,7 @@ export function ContactForm() {
         body: JSON.stringify({
           name: data.get("name"),
           email: data.get("email"),
+          phone: data.get("phone"),
           message: data.get("message"),
         }),
       });
@@ -64,7 +65,7 @@ export function ContactForm() {
 
   return (
     <form
-      className="mx-auto mt-8 max-w-[600px] rounded-lg bg-white p-6 shadow-[0_4px_15px_rgba(0,0,0,0.08)] sm:p-8"
+      className="mx-auto mt-8 max-w-[600px] rounded-2xl bg-white p-6 shadow-[0_4px_20px_rgba(0,0,0,0.08)] sm:p-10 border border-gray-100"
       onSubmit={handleSubmit}
     >
       {submitState === "error" && (
@@ -74,46 +75,71 @@ export function ContactForm() {
       )}
 
       <div className="mb-4">
-        <label className="block font-bold text-[#555]" htmlFor="contact-name">
-          Your Name:
+        <label className="block font-bold text-[#555] text-sm mb-1.5" htmlFor="contact-name">
+          Your Name <span className="text-red-500">*</span>
         </label>
         <input
           className={fieldClass}
           type="text"
           id="contact-name"
           name="name"
+          placeholder="e.g. Rahul Sharma"
           required
           disabled={submitState === "loading"}
         />
       </div>
-      <div className="mb-4">
-        <label className="block font-bold text-[#555]" htmlFor="contact-email">
-          Your Email:
-        </label>
-        <input
-          className={fieldClass}
-          type="email"
-          id="contact-email"
-          name="email"
-          required
-          disabled={submitState === "loading"}
-        />
+
+      <div className="grid gap-4 sm:grid-cols-2 mb-4">
+        <div>
+          <label className="block font-bold text-[#555] text-sm mb-1.5" htmlFor="contact-email">
+            Your Email <span className="text-red-500">*</span>
+          </label>
+          <input
+            className={fieldClass}
+            type="email"
+            id="contact-email"
+            name="email"
+            placeholder="e.g. rahul@example.com"
+            required
+            disabled={submitState === "loading"}
+          />
+        </div>
+
+        <div>
+          <label className="block font-bold text-[#555] text-sm mb-1.5" htmlFor="contact-phone">
+            Mobile Number <span className="text-red-500">*</span>
+          </label>
+          <input
+            className={fieldClass}
+            type="tel"
+            id="contact-phone"
+            name="phone"
+            pattern="[0-9]{10}"
+            placeholder="e.g. 8638443812"
+            required
+            disabled={submitState === "loading"}
+          />
+          <small className="mt-1 block text-xs text-gray-500">10-digit number</small>
+        </div>
       </div>
+
       <div className="mb-5">
-        <label className="block font-bold text-[#555]" htmlFor="contact-message">
-          Your Message:
+        <label className="block font-bold text-[#555] text-sm mb-1.5" htmlFor="contact-message">
+          Your Message <span className="text-red-500">*</span>
         </label>
         <textarea
           className={fieldClass}
           id="contact-message"
           name="message"
-          rows={5}
+          rows={4}
+          placeholder="How can we assist you with our courses or admissions?"
           required
           disabled={submitState === "loading"}
         />
       </div>
+
       <button
-        className={`${primaryButtonClass} w-full disabled:cursor-not-allowed disabled:opacity-60`}
+        className={`${primaryButtonClass} w-full disabled:cursor-not-allowed disabled:opacity-60 py-3 text-base font-bold shadow-md`}
         type="submit"
         disabled={submitState === "loading"}
       >
@@ -122,4 +148,5 @@ export function ContactForm() {
     </form>
   );
 }
+
 

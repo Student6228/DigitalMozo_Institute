@@ -21,25 +21,19 @@ export const features = [
     image: "/assets/practical.png",
     alt: "100% PRACTICAL Icon",
     description:
-      "DigitalMozo Institute provides 100% practical Safety labs for students who want to learn more about safety.",
+      "DigitalMozo Institute provides 100% practical Safety labs and live projects for hands-on skill development.",
   },
   {
     title: "Academic Excellence",
     image: "/assets/academic.png",
     alt: "Academic Excellence Icon",
-    description: "High-quality education with a focus on holistic development.",
+    description: "Industry-standard curriculum delivered by experienced professionals for holistic career growth.",
   },
   {
     title: "Student Portal",
     image: "/assets/student portal.png",
     alt: "Student Portal Icon",
-    description: "Access grades, assignments, and announcements easily.",
-  },
-  {
-    title: "Parent Communication",
-    image: "/assets/parent-portal.png",
-    alt: "Parent Communication Icon",
-    description: "Stay updated with real-time messages and progress reports.",
+    description: "Access course curriculum, schedules, updates, and learning resources seamlessly.",
   },
 ];
 
@@ -108,10 +102,10 @@ export const courses = [
 ];
 
 export const placementStats = [
-  { value: "95%+", label: "Placement Rate" },
+  { value: "100%", label: "Placement Assistance" },
   { value: "500+", label: "Students Placed" },
   { value: "100+", label: "Hiring Partners" },
-  { value: "Excellent", label: "Industry Feedback" },
+  { value: "Top Rated", label: "Industry Recognition" },
 ];
 
 export const testimonials = [
@@ -142,3 +136,4 @@ export const testimonials = [
 ];
 
 export const courseOptions = courses.map((course) => course.title);
+

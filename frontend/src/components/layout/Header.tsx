@@ -6,50 +6,50 @@ type HeaderProps = {
   compact?: boolean;
 };
 
-const primaryButton =
-  "rounded-[5px] border border-[#3498db] bg-[#3498db] px-4 py-2 text-center font-bold text-white transition hover:border-[#2980b9] hover:bg-[#2980b9]";
-const secondaryButton =
-  "rounded-[5px] border border-[#f39c12] bg-[#f39c12] px-4 py-2 text-center font-bold text-white transition hover:border-[#e67e22] hover:bg-[#e67e22]";
-
 export function Header({ compact = false }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const items = compact ? compactNavigationItems : navigationItems;
 
   return (
-    <header className="sticky top-0 z-50 bg-white py-3.5 shadow-[0_2px_5px_rgba(0,0,0,0.1)]">
-      <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-5">
-        <Link className="flex min-w-0 items-center text-[#2c3e50] no-underline" to="/">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md py-2.5 sm:py-3 border-b border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.06)]">
+      <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-3 px-4 sm:px-6">
+        {/* Brand Logo & Name */}
+        <Link className="flex min-w-0 items-center text-[#2c3e50] no-underline group" to="/">
           <img
-            className="mr-2.5 h-[50px] w-auto shrink-0"
+            className="mr-2.5 h-9 sm:h-11 w-auto shrink-0 rounded-md object-contain transition-transform duration-300 group-hover:scale-105"
             src="/assets/logo.png.jpg"
-            alt="School Logo"
+            alt="DigitalMozo Institute Logo"
           />
-          <span className="truncate text-xl font-bold sm:text-[1.8rem]">DigitalMozo Institute</span>
+          <span className="truncate text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#2c3e50]">
+            DigitalMozo <span className="text-[#3498db]">Institute</span>
+          </span>
         </Link>
 
+        {/* Mobile Hamburger Toggle Button */}
         <button
           type="button"
-          className="rounded-md p-2 text-3xl leading-none text-[#333] lg:hidden"
+          className="flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 p-2 text-xl text-gray-700 transition hover:bg-gray-50 lg:hidden"
           aria-label="Toggle navigation"
           aria-expanded={isOpen}
           aria-controls="primary-navigation"
           onClick={() => setIsOpen((open) => !open)}
         >
-          {isOpen ? "×" : "☰"}
+          {isOpen ? "✕" : "☰"}
         </button>
 
+        {/* Desktop & Mobile Navigation Menu */}
         <nav
           id="primary-navigation"
           className={`${
             isOpen ? "flex" : "hidden"
-          } absolute top-full right-0 left-0 flex-col border-t border-slate-100 bg-white px-5 py-4 shadow-lg lg:static lg:flex lg:flex-row lg:border-0 lg:p-0 lg:shadow-none`}
+          } absolute top-full right-0 left-0 flex-col border-b border-gray-200 bg-white px-5 py-5 shadow-xl transition-all lg:static lg:flex lg:flex-row lg:items-center lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none`}
           aria-label="Primary navigation"
         >
-          <ul className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-4">
+          <ul className="flex flex-col gap-1 lg:flex-row lg:items-center lg:gap-3 xl:gap-5">
             {items.map((item) => (
               <li key={item.href}>
                 <Link
-                  className="block py-2 font-bold text-[#555] transition hover:text-[#3498db] lg:py-1"
+                  className="block rounded-md px-2.5 py-1.5 text-sm font-semibold text-gray-700 transition hover:bg-blue-50 hover:text-[#3498db] lg:px-2 lg:py-1 lg:hover:bg-transparent"
                   to={item.href}
                   onClick={() => setIsOpen(false)}
                 >
@@ -57,27 +57,24 @@ export function Header({ compact = false }: HeaderProps) {
                 </Link>
               </li>
             ))}
+
             {!compact ? (
-              <>
-                <li className="mt-2 lg:mt-0">
-                  <Link
-                    className={`block ${primaryButton}`}
-                    to="/student-login"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Student Login
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`block ${secondaryButton}`}
-                    to="/teacher-login"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Teacher Login
-                  </Link>
-                </li>
-              </>
+              <li className="mt-3 flex flex-col gap-2 border-t border-gray-100 pt-3 sm:flex-row lg:mt-0 lg:border-0 lg:pt-0">
+                <Link
+                  className="rounded-lg bg-[#3498db] px-3.5 py-1.5 text-center text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:bg-[#2980b9] hover:shadow"
+                  to="/student-login"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Student Login
+                </Link>
+                <Link
+                  className="rounded-lg bg-[#f39c12] px-3.5 py-1.5 text-center text-xs sm:text-sm font-semibold text-white shadow-sm transition hover:bg-[#e67e22] hover:shadow"
+                  to="/teacher-login"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Teacher Login
+                </Link>
+              </li>
             ) : null}
           </ul>
         </nav>
@@ -85,3 +82,4 @@ export function Header({ compact = false }: HeaderProps) {
     </header>
   );
 }
+

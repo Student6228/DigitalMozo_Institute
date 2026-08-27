@@ -70,7 +70,7 @@ export function createApp() {
   });
 
   app.post("/api/contact", async (request, response) => {
-    const { name, email, message } = request.body ?? {};
+    const { name, email, phone, message } = request.body ?? {};
 
     if (!name || !email || !message) {
       response.status(400).json({ error: "Missing required contact fields" });
@@ -82,6 +82,7 @@ export function createApp() {
         data: {
           name: String(name).trim(),
           email: String(email).trim().toLowerCase(),
+          phone: phone ? String(phone).trim() : null,
           message: String(message).trim(),
         },
       });
@@ -97,6 +98,7 @@ export function createApp() {
       });
     }
   });
+
 
   app.post("/api/auth/login", (request, response) => {
     const parseResult = loginSchema.safeParse(request.body);
