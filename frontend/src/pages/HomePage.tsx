@@ -12,8 +12,10 @@ import { Header } from "../components/layout/Header";
 
 export function HomePage() {
   useEffect(() => {
-    document.title = "School Management System";
+    document.title =
+      "DigitalMozo Institute | Government Certified Safety, Software & Digital Courses – Guwahati";
   }, []);
+
 
   return (
     <>

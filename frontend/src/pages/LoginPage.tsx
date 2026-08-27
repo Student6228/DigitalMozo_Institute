@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { LoginForm } from "../components/forms/LoginForm";
 import { Footer } from "../components/layout/Footer";
 import { Header } from "../components/layout/Header";
@@ -23,9 +24,25 @@ export function LoginPage({ type }: LoginPageProps) {
             {title}
           </h1>
           <LoginForm type={type} />
+
+          {/* Portal Notice */}
+          <div className="mx-auto mt-8 max-w-[500px] rounded-xl border border-blue-200 bg-blue-50 px-6 py-5 text-center">
+            <p className="text-sm font-semibold text-blue-800">🎓 Online Student Portal</p>
+            <p className="mt-1 text-sm text-blue-700">
+              The online portal is being prepared for our upcoming batch. Enrolled students will
+              receive their login credentials during orientation.
+            </p>
+            <Link
+              to="/#admissions"
+              className="mt-3 inline-block text-sm font-bold text-[#3498db] hover:underline"
+            >
+              Apply for Admissions →
+            </Link>
+          </div>
         </section>
       </main>
       <Footer compact />
     </div>
   );
 }
+

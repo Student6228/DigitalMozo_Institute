@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
+import { db } from "./db.js";
 import { loginSchema } from "./schemas/auth.js";
 
 export function createApp() {
@@ -34,30 +35,67 @@ export function createApp() {
     });
   });
 
-  app.post("/api/inquiry", (request, response) => {
+  app.post("/api/inquiry", async (request, response) => {
     const { applicantName, applicantEmail, applicantPhone, preferredCourse, message } =
       request.body ?? {};
+
     if (!applicantName || !applicantEmail || !applicantPhone || !preferredCourse) {
       response.status(400).json({ error: "Missing required inquiry fields" });
       return;
     }
-    response.json({
-      success: true,
-      message: "Inquiry received successfully. Our admissions team will contact you shortly.",
-      data: { applicantName, preferredCourse, message: message || null },
-    });
+
+    try {
+      const inquiry = await db.inquiry.create({
+        data: {
+          applicantName: String(applicantName).trim(),
+          applicantEmail: String(applicantEmail).trim().toLowerCase(),
+          applicantPhone: String(applicantPhone).trim(),
+          preferredCourse: String(preferredCourse).trim(),
+          message: message ? String(message).trim() : null,
+        },
+      });
+
+      response.json({
+        success: true,
+        message:
+          "Inquiry received successfully. Our admissions team will contact you shortly.",
+        data: { id: inquiry.id, applicantName: inquiry.applicantName, preferredCourse: inquiry.preferredCourse },
+      });
+    } catch (error) {
+      console.error("[POST /api/inquiry] DB error:", error);
+      response.status(500).json({
+        error: "Unable to save your inquiry right now. Please call us directly or try again.",
+      });
+    }
   });
 
-  app.post("/api/contact", (request, response) => {
+  app.post("/api/contact", async (request, response) => {
     const { name, email, message } = request.body ?? {};
+
     if (!name || !email || !message) {
       response.status(400).json({ error: "Missing required contact fields" });
       return;
     }
-    response.json({
-      success: true,
-      message: "Message received successfully. Thank you for contacting DigitalMozo Institute.",
-    });
+
+    try {
+      await db.contactMessage.create({
+        data: {
+          name: String(name).trim(),
+          email: String(email).trim().toLowerCase(),
+          message: String(message).trim(),
+        },
+      });
+
+      response.json({
+        success: true,
+        message: "Message received successfully. Thank you for contacting DigitalMozo Institute.",
+      });
+    } catch (error) {
+      console.error("[POST /api/contact] DB error:", error);
+      response.status(500).json({
+        error: "Unable to send your message right now. Please call us directly or try again.",
+      });
+    }
   });
 
   app.post("/api/auth/login", (request, response) => {
@@ -80,3 +118,4 @@ export function createApp() {
 
   return app;
 }
+

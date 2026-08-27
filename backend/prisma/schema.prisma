@@ -5,5 +5,26 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
+
+
+/// Admission inquiry submissions from the public landing page form
+model Inquiry {
+  id              Int      @id @default(autoincrement())
+  applicantName   String
+  applicantEmail  String
+  applicantPhone  String
+  preferredCourse String
+  message         String?
+  createdAt       DateTime @default(now())
+}
+
+/// Contact messages submitted via the "Get in Touch" form
+model ContactMessage {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+}
+

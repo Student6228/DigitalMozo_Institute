@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { WhatsAppButton } from "./components/common/WhatsAppButton";
 import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
@@ -25,6 +26,7 @@ export default function App() {
   return (
     <>
       <ScrollManager />
+      <WhatsAppButton />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/student-login" element={<LoginPage type="student" />} />
@@ -34,3 +36,4 @@ export default function App() {
     </>
   );
 }
+
