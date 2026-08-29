@@ -1,4 +1,4 @@
-import { placementStats, testimonials } from "../../data/siteData";
+import { placementRecords, placementStats } from "../../data/siteData";
 import { SectionHeading } from "../common/SectionHeading";
 import { primaryButtonClass } from "../common/styles";
 
@@ -26,54 +26,73 @@ export function PlacementSection() {
           ))}
         </div>
 
-        {/* Testimonials / Hear From Our Successful Graduates */}
+        {/* Placed Students Section */}
         <div className="mt-20 text-center">
           <span className="rounded-full bg-blue-100 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#3498db]">
-            Alumni Stories
+            Recent Placements
           </span>
           <h2 className="mt-3 text-3xl font-bold text-[#2c3e50] md:text-4xl">
-            Hear From Our Successful Graduates
+            Our Placed Students
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-gray-600">
-            Real stories from our students who transformed their careers with our practical training and 100% placement support.
+            Celebrating our graduates stepping into rewarding professional roles across top organizations.
           </p>
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
+          {placementRecords.map((student) => (
             <article
-              key={testimonial.name}
-              className="flex flex-col rounded-2xl bg-white p-8 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl border border-gray-100"
+              key={student.name}
+              className="group flex flex-col items-center justify-between rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
             >
-              <div className="flex items-center gap-4 mb-5">
-                <div className="relative h-16 w-16 shrink-0">
+              <div className="flex flex-col items-center w-full">
+                <div className="relative mb-5 h-28 w-28 shrink-0 overflow-hidden rounded-full border-4 border-white ring-4 ring-[#3498db]/20 shadow-md transition-transform duration-300 group-hover:scale-105">
                   <img
-                    className="h-16 w-16 rounded-full border-2 border-[#3498db] object-cover shadow-sm"
-                    src={testimonial.image}
-                    alt={testimonial.name}
+                    className="h-full w-full rounded-full object-cover object-top"
+                    src={student.image}
+                    alt={student.name}
                     loading="lazy"
                   />
-                  <span className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-500 text-[10px] text-white shadow" title="Verified Placement">
-                    ✓
-                  </span>
                 </div>
-                <div>
-                  <h3 className="font-bold text-[#2c3e50] text-lg">{testimonial.name}</h3>
-                  <p className="text-xs font-medium text-gray-500">{testimonial.role}</p>
-                  <span className="mt-1 inline-block rounded bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-[#3498db]">
-                    {testimonial.company}
-                  </span>
+
+                <h3 className="text-xl font-bold text-[#2c3e50]">{student.name}</h3>
+                <p className="mt-1 text-sm font-medium text-gray-500 flex items-center justify-center gap-1">
+                  <svg
+                    className="h-4 w-4 text-[#3498db]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
+                  </svg>
+                  {student.location}
+                </p>
+
+                <div className="mt-5 w-full border-t border-gray-100 pt-5">
+                  <p className="text-sm font-semibold text-[#3498db]">{student.designation}</p>
+                  <p className="mt-1.5 text-sm font-medium text-gray-700 leading-snug">
+                    {student.company}
+                  </p>
                 </div>
               </div>
 
-              <blockquote className="grow italic leading-relaxed text-gray-600 text-sm">
-                “{testimonial.quote}”
-              </blockquote>
-
-              <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4 text-xs text-gray-400">
-                <span>⭐ 5.0 Verified Review</span>
-                <span className="text-green-600 font-semibold">● Placed</span>
-              </div>
+              {student.ctc ? (
+                <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-4 py-1 text-xs font-bold text-emerald-700 border border-emerald-200 shadow-xs">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>CTC: {student.ctc}</span>
+                </div>
+              ) : null}
             </article>
           ))}
         </div>
@@ -95,4 +114,5 @@ export function PlacementSection() {
     </section>
   );
 }
+
 

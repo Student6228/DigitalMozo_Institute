@@ -108,32 +108,79 @@ export const placementStats = [
   { value: "Top Rated", label: "Industry Recognition" },
 ];
 
-export const testimonials = [
+export interface PlacementRecord {
+  name: string;
+  location: string;
+  designation: string;
+  company: string;
+  ctc?: string;
+  image: string;
+}
+
+export interface StudentFeedback {
+  name: string;
+  image: string;
+  feedback: string;
+}
+
+export const placementRecords: PlacementRecord[] = [
   {
-    name: "Rohan Sharma",
-    role: "Safety Officer",
-    company: "ABC Construction Pvt. Ltd.",
+    name: "Mantu Khakhlary",
+    location: "Rajabari, Assam",
+    designation: "Social Development Inspector-I",
+    company: "Shree Bhawani Consultancy Services Pvt. Ltd.",
+    ctc: "₹3.60 LPA",
     image: "/assets/STUDENT-1.jpg",
-    quote:
-      "Digital Mozo Institute provided me with the practical skills and confidence I needed. The 100% placement assistance truly works! I landed a great job as a Safety Officer right after graduation.",
   },
   {
-    name: "Atowar Rahman",
-    role: "Web Designer",
-    company: "XYZ Digital Agency",
+    name: "Abdul Aziz",
+    location: "Rampur, Goalpara, Assam",
+    designation: "Occupational Health Safety Inspector-2",
+    company: "Shree Bhawani Consultancy Services Pvt. Ltd.",
+    ctc: "₹5.04 LPA",
     image: "/assets/Web-Dig-AA.JPG",
-    quote:
-      "The Web Designing course was incredibly hands-on. Thanks to the dedicated faculty and placement team, I'm now building amazing websites professionally.",
   },
   {
-    name: "Shitesh Kumar",
-    role: "Digital Marketing Specialist",
-    company: "Global Reach Solutions",
+    name: "Hirak Jyoti Gohain",
+    location: "Tezpur, Assam",
+    designation: "Safety Officer – HSE",
+    company: "Esswin Electro Controls Pvt. Ltd.",
+    ctc: "₹4.18 LPA",
     image: "/assets/Student-3.jpg",
-    quote:
-      "My experience with the Digital Marketing program was transformative. The practical sessions and career guidance helped me secure a role in a leading marketing firm.",
   },
 ];
 
+export const studentFeedbacks: StudentFeedback[] = [
+  {
+    name: "Mantu Khakhlary",
+    image: "/assets/STUDENT-1.jpg",
+    feedback:
+      "The practical training and real-world case studies at Digital Mozo Institute gave me a strong foundation. The instructors were always approachable and patiently resolved all our doubts. Their career guidance and interview preparation sessions gave me the confidence to step into the professional world.",
+  },
+  {
+    name: "Abdul Aziz",
+    image: "/assets/Web-Dig-AA.JPG",
+    feedback:
+      "Enrolling at Digital Mozo Institute was one of the best decisions for my career. The hands-on sessions and structured modules helped me master critical workplace safety practices. The dedicated faculty and mentorship throughout the program made all the difference.",
+  },
+  {
+    name: "Hirak Jyoti Gohain",
+    image: "/assets/Student-3.jpg",
+    feedback:
+      "Digital Mozo Institute provides a supportive learning environment with experienced mentors who focus on practical application. The mock interviews and personality development guidance prepared me thoroughly for industry demands and boosted my confidence.",
+  },
+];
+
+export const testimonials = placementRecords.map((record) => ({
+  name: record.name,
+  role: record.designation,
+  company: record.company,
+  image: record.image,
+  quote:
+    studentFeedbacks.find((f) => f.name === record.name)?.feedback ||
+    "Exceptional learning experience and career support.",
+}));
+
 export const courseOptions = courses.map((course) => course.title);
+
 

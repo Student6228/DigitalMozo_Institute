@@ -7,6 +7,7 @@ import { FeaturesSection } from "../components/home/FeaturesSection";
 import { HeroSection } from "../components/home/HeroSection";
 import { NewsEventsSection } from "../components/home/NewsEventsSection";
 import { PlacementSection } from "../components/home/PlacementSection";
+import { StudentFeedbackSection } from "../components/home/StudentFeedbackSection";
 import { Footer } from "../components/layout/Footer";
 import { Header } from "../components/layout/Header";
 
@@ -27,6 +28,7 @@ export function HomePage() {
         <NewsEventsSection />
         <CoursesSection />
         <PlacementSection />
+        <StudentFeedbackSection />
         <AdmissionsSection />
         <ContactSection />
       </main>
