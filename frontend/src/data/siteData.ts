@@ -130,7 +130,7 @@ export const placementRecords: PlacementRecord[] = [
     designation: "Social Development Inspector-I",
     company: "Shree Bhawani Consultancy Services Pvt. Ltd.",
     ctc: "₹3.60 LPA",
-    image: "/assets/STUDENT-1.jpg",
+    image: "/assets/STUDENT-1.jpeg",
   },
   {
     name: "Abdul Aziz",
@@ -138,7 +138,7 @@ export const placementRecords: PlacementRecord[] = [
     designation: "Occupational Health Safety Inspector-2",
     company: "Shree Bhawani Consultancy Services Pvt. Ltd.",
     ctc: "₹5.04 LPA",
-    image: "/assets/Web-Dig-AA.JPG",
+    image: "/assets/Web-Dig-AA.jpeg",
   },
   {
     name: "Hirak Jyoti Gohain",
@@ -146,26 +146,26 @@ export const placementRecords: PlacementRecord[] = [
     designation: "Safety Officer – HSE",
     company: "Esswin Electro Controls Pvt. Ltd.",
     ctc: "₹4.18 LPA",
-    image: "/assets/Student-3.jpg",
+    image: "/assets/Student-3.jpeg",
   },
 ];
 
 export const studentFeedbacks: StudentFeedback[] = [
   {
     name: "Mantu Khakhlary",
-    image: "/assets/STUDENT-1.jpg",
+    image: "/assets/STUDENT-1.jpeg",
     feedback:
       "The practical training and real-world case studies at Digital Mozo Institute gave me a strong foundation. The instructors were always approachable and patiently resolved all our doubts. Their career guidance and interview preparation sessions gave me the confidence to step into the professional world.",
   },
   {
     name: "Abdul Aziz",
-    image: "/assets/Web-Dig-AA.JPG",
+    image: "/assets/Web-Dig-AA.jpeg",
     feedback:
       "Enrolling at Digital Mozo Institute was one of the best decisions for my career. The hands-on sessions and structured modules helped me master critical workplace safety practices. The dedicated faculty and mentorship throughout the program made all the difference.",
   },
   {
     name: "Hirak Jyoti Gohain",
-    image: "/assets/Student-3.jpg",
+    image: "/assets/Student-3.jpeg",
     feedback:
       "Digital Mozo Institute provides a supportive learning environment with experienced mentors who focus on practical application. The mock interviews and personality development guidance prepared me thoroughly for industry demands and boosted my confidence.",
   },
