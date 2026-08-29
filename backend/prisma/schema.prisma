@@ -16,7 +16,10 @@ model Inquiry {
   applicantPhone  String
   preferredCourse String
   message         String?
+  status          String   @default("PENDING")
+  notes           String?
   createdAt       DateTime @default(now())
+  updatedAt       DateTime @default(now()) @updatedAt
 }
 
 /// Contact messages submitted via the "Get in Touch" form
@@ -26,7 +29,21 @@ model ContactMessage {
   email     String
   phone     String?
   message   String
+  status    String   @default("UNREAD")
+  notes     String?
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
 }
 
-
+/// System users (Admins, Counselors, Staff, Teachers, Students)
+model User {
+  id           Int      @id @default(autoincrement())
+  name         String
+  email        String   @unique
+  passwordHash String
+  role         String   @default("ADMIN")
+  phone        String?
+  status       String   @default("ACTIVE")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @default(now()) @updatedAt
+}

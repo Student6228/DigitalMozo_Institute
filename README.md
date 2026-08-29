@@ -41,7 +41,23 @@ npm run dev
 ```
 
 - **Frontend Application**: `http://localhost:5173`
+- **Admin Control Center**: `http://localhost:5173/admin` (Production: `https://digitalmozoinstitute.in/admin`)
 - **Backend API**: `http://localhost:4000` (Health Check: `http://localhost:4000/api/health`)
+
+---
+
+## 🔐 Admin Dashboard Access
+
+- **Route**: `/admin` or `/admin/login`
+- **Administrator Email**: `faizur544@gmail.com`
+- **Administrator Password**: `Faizur@7035`
+
+Once logged in, administrators can:
+- View real-time admission leads with 1-click **WhatsApp / Direct Call** actions.
+- Update inquiry progress status (`Pending` → `Contacted` → `Admitted` → `Rejected`) and write counselor notes.
+- Download complete leads to Excel/CSV with the **Export to CSV** button.
+- Manage "Get in Touch" contact messages and mark as Read/Resolved.
+- Manage user accounts (Admins, Counselors, Staff, and Teachers) and reset passwords.
 
 ---
 

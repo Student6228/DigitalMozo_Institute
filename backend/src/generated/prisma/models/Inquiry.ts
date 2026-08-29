@@ -41,7 +41,10 @@ export type InquiryMinAggregateOutputType = {
   applicantPhone: string | null
   preferredCourse: string | null
   message: string | null
+  status: string | null
+  notes: string | null
   createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type InquiryMaxAggregateOutputType = {
@@ -51,7 +54,10 @@ export type InquiryMaxAggregateOutputType = {
   applicantPhone: string | null
   preferredCourse: string | null
   message: string | null
+  status: string | null
+  notes: string | null
   createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type InquiryCountAggregateOutputType = {
@@ -61,7 +67,10 @@ export type InquiryCountAggregateOutputType = {
   applicantPhone: number
   preferredCourse: number
   message: number
+  status: number
+  notes: number
   createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -81,7 +90,10 @@ export type InquiryMinAggregateInputType = {
   applicantPhone?: true
   preferredCourse?: true
   message?: true
+  status?: true
+  notes?: true
   createdAt?: true
+  updatedAt?: true
 }
 
 export type InquiryMaxAggregateInputType = {
@@ -91,7 +103,10 @@ export type InquiryMaxAggregateInputType = {
   applicantPhone?: true
   preferredCourse?: true
   message?: true
+  status?: true
+  notes?: true
   createdAt?: true
+  updatedAt?: true
 }
 
 export type InquiryCountAggregateInputType = {
@@ -101,7 +116,10 @@ export type InquiryCountAggregateInputType = {
   applicantPhone?: true
   preferredCourse?: true
   message?: true
+  status?: true
+  notes?: true
   createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -198,7 +216,10 @@ export type InquiryGroupByOutputType = {
   applicantPhone: string
   preferredCourse: string
   message: string | null
+  status: string
+  notes: string | null
   createdAt: Date
+  updatedAt: Date
   _count: InquiryCountAggregateOutputType | null
   _avg: InquiryAvgAggregateOutputType | null
   _sum: InquirySumAggregateOutputType | null
@@ -231,7 +252,10 @@ export type InquiryWhereInput = {
   applicantPhone?: Prisma.StringFilter<"Inquiry"> | string
   preferredCourse?: Prisma.StringFilter<"Inquiry"> | string
   message?: Prisma.StringNullableFilter<"Inquiry"> | string | null
+  status?: Prisma.StringFilter<"Inquiry"> | string
+  notes?: Prisma.StringNullableFilter<"Inquiry"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Inquiry"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Inquiry"> | Date | string
 }
 
 export type InquiryOrderByWithRelationInput = {
@@ -241,7 +265,10 @@ export type InquiryOrderByWithRelationInput = {
   applicantPhone?: Prisma.SortOrder
   preferredCourse?: Prisma.SortOrder
   message?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
+  notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InquiryWhereUniqueInput = Prisma.AtLeast<{
@@ -254,7 +281,10 @@ export type InquiryWhereUniqueInput = Prisma.AtLeast<{
   applicantPhone?: Prisma.StringFilter<"Inquiry"> | string
   preferredCourse?: Prisma.StringFilter<"Inquiry"> | string
   message?: Prisma.StringNullableFilter<"Inquiry"> | string | null
+  status?: Prisma.StringFilter<"Inquiry"> | string
+  notes?: Prisma.StringNullableFilter<"Inquiry"> | string | null
   createdAt?: Prisma.DateTimeFilter<"Inquiry"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Inquiry"> | Date | string
 }, "id">
 
 export type InquiryOrderByWithAggregationInput = {
@@ -264,7 +294,10 @@ export type InquiryOrderByWithAggregationInput = {
   applicantPhone?: Prisma.SortOrder
   preferredCourse?: Prisma.SortOrder
   message?: Prisma.SortOrderInput | Prisma.SortOrder
+  status?: Prisma.SortOrder
+  notes?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.InquiryCountOrderByAggregateInput
   _avg?: Prisma.InquiryAvgOrderByAggregateInput
   _max?: Prisma.InquiryMaxOrderByAggregateInput
@@ -282,7 +315,10 @@ export type InquiryScalarWhereWithAggregatesInput = {
   applicantPhone?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
   preferredCourse?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
   message?: Prisma.StringNullableWithAggregatesFilter<"Inquiry"> | string | null
+  status?: Prisma.StringWithAggregatesFilter<"Inquiry"> | string
+  notes?: Prisma.StringNullableWithAggregatesFilter<"Inquiry"> | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Inquiry"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Inquiry"> | Date | string
 }
 
 export type InquiryCreateInput = {
@@ -291,7 +327,10 @@ export type InquiryCreateInput = {
   applicantPhone: string
   preferredCourse: string
   message?: string | null
+  status?: string
+  notes?: string | null
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type InquiryUncheckedCreateInput = {
@@ -301,7 +340,10 @@ export type InquiryUncheckedCreateInput = {
   applicantPhone: string
   preferredCourse: string
   message?: string | null
+  status?: string
+  notes?: string | null
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type InquiryUpdateInput = {
@@ -310,7 +352,10 @@ export type InquiryUpdateInput = {
   applicantPhone?: Prisma.StringFieldUpdateOperationsInput | string
   preferredCourse?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InquiryUncheckedUpdateInput = {
@@ -320,7 +365,10 @@ export type InquiryUncheckedUpdateInput = {
   applicantPhone?: Prisma.StringFieldUpdateOperationsInput | string
   preferredCourse?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InquiryCreateManyInput = {
@@ -330,7 +378,10 @@ export type InquiryCreateManyInput = {
   applicantPhone: string
   preferredCourse: string
   message?: string | null
+  status?: string
+  notes?: string | null
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type InquiryUpdateManyMutationInput = {
@@ -339,7 +390,10 @@ export type InquiryUpdateManyMutationInput = {
   applicantPhone?: Prisma.StringFieldUpdateOperationsInput | string
   preferredCourse?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InquiryUncheckedUpdateManyInput = {
@@ -349,7 +403,10 @@ export type InquiryUncheckedUpdateManyInput = {
   applicantPhone?: Prisma.StringFieldUpdateOperationsInput | string
   preferredCourse?: Prisma.StringFieldUpdateOperationsInput | string
   message?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  status?: Prisma.StringFieldUpdateOperationsInput | string
+  notes?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InquiryCountOrderByAggregateInput = {
@@ -359,7 +416,10 @@ export type InquiryCountOrderByAggregateInput = {
   applicantPhone?: Prisma.SortOrder
   preferredCourse?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InquiryAvgOrderByAggregateInput = {
@@ -373,7 +433,10 @@ export type InquiryMaxOrderByAggregateInput = {
   applicantPhone?: Prisma.SortOrder
   preferredCourse?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InquiryMinOrderByAggregateInput = {
@@ -383,7 +446,10 @@ export type InquiryMinOrderByAggregateInput = {
   applicantPhone?: Prisma.SortOrder
   preferredCourse?: Prisma.SortOrder
   message?: Prisma.SortOrder
+  status?: Prisma.SortOrder
+  notes?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type InquirySumOrderByAggregateInput = {
@@ -419,7 +485,10 @@ export type InquirySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   applicantPhone?: boolean
   preferredCourse?: boolean
   message?: boolean
+  status?: boolean
+  notes?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["inquiry"]>
 
 export type InquirySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -429,7 +498,10 @@ export type InquirySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   applicantPhone?: boolean
   preferredCourse?: boolean
   message?: boolean
+  status?: boolean
+  notes?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["inquiry"]>
 
 export type InquirySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -439,7 +511,10 @@ export type InquirySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   applicantPhone?: boolean
   preferredCourse?: boolean
   message?: boolean
+  status?: boolean
+  notes?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["inquiry"]>
 
 export type InquirySelectScalar = {
@@ -449,10 +524,13 @@ export type InquirySelectScalar = {
   applicantPhone?: boolean
   preferredCourse?: boolean
   message?: boolean
+  status?: boolean
+  notes?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type InquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "applicantName" | "applicantEmail" | "applicantPhone" | "preferredCourse" | "message" | "createdAt", ExtArgs["result"]["inquiry"]>
+export type InquiryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "applicantName" | "applicantEmail" | "applicantPhone" | "preferredCourse" | "message" | "status" | "notes" | "createdAt" | "updatedAt", ExtArgs["result"]["inquiry"]>
 
 export type $InquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Inquiry"
@@ -464,7 +542,10 @@ export type $InquiryPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     applicantPhone: string
     preferredCourse: string
     message: string | null
+    status: string
+    notes: string | null
     createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["inquiry"]>
   composites: {}
 }
@@ -894,7 +975,10 @@ export interface InquiryFieldRefs {
   readonly applicantPhone: Prisma.FieldRef<"Inquiry", 'String'>
   readonly preferredCourse: Prisma.FieldRef<"Inquiry", 'String'>
   readonly message: Prisma.FieldRef<"Inquiry", 'String'>
+  readonly status: Prisma.FieldRef<"Inquiry", 'String'>
+  readonly notes: Prisma.FieldRef<"Inquiry", 'String'>
   readonly createdAt: Prisma.FieldRef<"Inquiry", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Inquiry", 'DateTime'>
 }
     
 

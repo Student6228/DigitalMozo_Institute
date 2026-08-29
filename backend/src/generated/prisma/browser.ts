@@ -27,3 +27,8 @@ export type Inquiry = Prisma.InquiryModel
  * Contact messages submitted via the "Get in Touch" form
  */
 export type ContactMessage = Prisma.ContactMessageModel
+/**
+ * Model User
+ * System users (Admins, Counselors, Staff, Teachers, Students)
+ */
+export type User = Prisma.UserModel

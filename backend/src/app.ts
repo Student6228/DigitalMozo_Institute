@@ -3,10 +3,14 @@ import express from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import { db } from "./db.js";
+import { adminRouter, ensureDefaultAdmin } from "./routes/admin.js";
 import { loginSchema } from "./schemas/auth.js";
 
 export function createApp() {
   const app = express();
+
+  // Initialize default admin user if database is empty
+  void ensureDefaultAdmin();
 
   app.disable("x-powered-by");
   app.use(helmet());
@@ -26,6 +30,9 @@ export function createApp() {
       legacyHeaders: false,
     }),
   );
+
+  // Mount Admin and Public Auth routes under /api
+  app.use("/api", adminRouter);
 
   app.get("/api/health", (_request, response) => {
     response.json({
