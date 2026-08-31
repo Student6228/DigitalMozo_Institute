@@ -1,8 +1,11 @@
 export const primaryButtonClass =
-  "inline-block rounded-[5px] border border-[#3498db] bg-[#3498db] px-6 py-3 text-center font-semibold text-white transition-all duration-300 shadow-md shadow-[#3498db]/30 hover:border-[#2980b9] hover:bg-[#2980b9] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#3498db]/40 focus-visible:outline-2 focus-visible:outline-[#3498db]";
+  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3 text-center text-sm sm:text-base font-semibold text-white transition-all duration-300 shadow-md shadow-blue-500/20 hover:bg-blue-700 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-blue-500/30 focus-visible:outline-2 focus-visible:outline-blue-600 active:translate-y-0";
 
 export const secondaryButtonClass =
-  "inline-block rounded-[5px] border border-[#f39c12] bg-[#f39c12] px-6 py-3 text-center font-semibold text-white transition-all duration-300 shadow-md shadow-[#f39c12]/30 hover:border-[#e67e22] hover:bg-[#e67e22] hover:-translate-y-1 hover:shadow-lg hover:shadow-[#f39c12]/40 focus-visible:outline-2 focus-visible:outline-[#f39c12]";
+  "inline-flex items-center justify-center rounded-xl bg-amber-500 px-6 py-3 text-center text-sm sm:text-base font-semibold text-white transition-all duration-300 shadow-md shadow-amber-500/20 hover:bg-amber-600 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-amber-500/30 focus-visible:outline-2 focus-visible:outline-amber-500 active:translate-y-0";
+
+export const outlineButtonClass =
+  "inline-flex items-center justify-center rounded-xl border border-slate-300 bg-white px-6 py-3 text-center text-sm sm:text-base font-semibold text-slate-700 transition-all duration-300 shadow-xs hover:bg-slate-50 hover:text-blue-600 hover:border-blue-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-blue-600 active:translate-y-0";
 
 export const fieldClass =
-  "mt-2 w-full rounded-md border border-[#ccc] bg-white px-3.5 py-3 text-base text-[#333] outline-none transition focus:border-[#3498db] focus:ring-2 focus:ring-[#3498db]/20";
+  "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-800 placeholder-slate-400 outline-none transition duration-200 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10";

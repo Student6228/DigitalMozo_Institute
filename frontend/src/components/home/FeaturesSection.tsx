@@ -1,28 +1,40 @@
 import { features } from "../../data/siteData";
+import { SectionHeading } from "../common/SectionHeading";
 
 export function FeaturesSection() {
   return (
-    <section className="bg-[#f4f4f4] py-16 md:py-24">
-      <div className="mx-auto max-w-[1200px] px-5">
-        <h2 className="text-center text-3xl font-bold text-[#2c3e50] md:text-4xl">Our Core Features</h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
-          Discover why aspiring professionals choose DigitalMozo Institute for comprehensive career education.
-        </p>
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
+    <section className="bg-white py-20 md:py-24 border-b border-slate-100">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          badge="Why Choose Us"
+          title="Our Core Training Advantages"
+          description="Discover why aspiring professionals choose DigitalMozo Institute for comprehensive, hands-on career education."
+        />
+
+        <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, idx) => (
             <article
               key={feature.title}
-              className="flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl lg:p-10 border-t-4 border-[#3498db]"
+              className="group flex flex-col items-center rounded-2xl bg-white p-8 text-center border border-slate-200/80 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-blue-300 relative overflow-hidden"
             >
-              <div className="mb-6 flex h-24 w-24 items-center justify-center rounded-2xl bg-blue-50 p-4 shadow-inner">
+              {/* Accent top stripe */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-1.5 ${
+                  idx === 0 ? "bg-blue-600" : idx === 1 ? "bg-amber-500" : "bg-emerald-600"
+                }`}
+              />
+
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-slate-50 border border-slate-100 p-4 shadow-inner group-hover:scale-105 transition-transform duration-300">
                 <img
-                  className="h-16 w-16 object-contain drop-shadow-sm transition-transform duration-300 hover:scale-110"
+                  className="h-12 w-12 object-contain"
                   src={feature.image}
                   alt={feature.alt}
+                  loading="lazy"
                 />
               </div>
-              <h3 className="text-xl font-bold text-[#2c3e50]">{feature.title}</h3>
-              <p className="mt-3 leading-relaxed text-gray-600">{feature.description}</p>
+
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">{feature.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{feature.description}</p>
             </article>
           ))}
         </div>
@@ -30,4 +42,3 @@ export function FeaturesSection() {
     </section>
   );
 }
-

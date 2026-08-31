@@ -4,77 +4,133 @@ import { secondaryButtonClass } from "../common/styles";
 
 export function AdmissionsSection() {
   return (
-    <section id="admissions" className="scroll-mt-20 bg-[#f4f4f4] py-16 md:py-24">
-      <div className="mx-auto max-w-[1200px] px-5">
+    <section id="admissions" className="scroll-mt-20 bg-slate-50/70 py-20 md:py-28 border-b border-slate-100">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="Admissions"
-          description="Embark on your journey to a successful career with Digital Mozo Institute. Our admissions process is designed to be straightforward and supportive. Find all the information you need to join our vibrant learning community below."
+          badge="Admissions 2025–2026"
+          title="Simple, Transparent Admission Process"
+          description="Embark on your journey to a successful career with DigitalMozo Institute. Our admissions process is designed to be straightforward and supportive."
         />
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          <article className="flex flex-col rounded-2xl bg-white p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
-            <h3 className="text-2xl font-bold text-[#3498db]">Admission Process</h3>
-            <ol className="mt-6 grow list-decimal space-y-4 pl-6 leading-relaxed text-gray-700">
-              <li>
-                <strong>Inquiry & Counseling:</strong> Contact us to discuss your career goals and
-                explore our course offerings. Our counselors are here to guide you.
+        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+          {/* Admission Steps */}
+          <article className="flex flex-col rounded-2xl bg-white p-8 sm:p-10 border border-slate-200/80 shadow-xs transition-all hover:shadow-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-bold">
+                1
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+                Admission Procedure
+              </h3>
+            </div>
+
+            <ol className="grow space-y-4 text-sm sm:text-base leading-relaxed text-slate-600">
+              <li className="flex items-start gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600 mt-0.5">1</span>
+                <div>
+                  <strong className="text-slate-900">Inquiry & Career Counseling:</strong> Contact our admission counselors to review eligibility and course structures.
+                </div>
               </li>
-              <li>
-                <strong>Application Submission:</strong> Fill out our online application form or
-                visit our institute for an offline application.
+              <li className="flex items-start gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600 mt-0.5">2</span>
+                <div>
+                  <strong className="text-slate-900">Application Submission:</strong> Complete the online inquiry form below or visit our Jalukbari campus.
+                </div>
               </li>
-              <li>
-                <strong>Document Verification:</strong> Submit the required documents for
-                verification (see list below).
+              <li className="flex items-start gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600 mt-0.5">3</span>
+                <div>
+                  <strong className="text-slate-900">Document Verification:</strong> Submit academic credentials and ID proof for verification.
+                </div>
               </li>
-              <li>
-                <strong>Admission Confirmation:</strong> Upon successful verification and fee
-                payment, your admission will be confirmed!
+              <li className="flex items-start gap-3">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-50 text-xs font-bold text-blue-600 mt-0.5">4</span>
+                <div>
+                  <strong className="text-slate-900">Enrollment Confirmation:</strong> Receive your enrollment kit, ID card, and batch schedule!
+                </div>
               </li>
             </ol>
+
             <a
-              className={`${secondaryButtonClass} mt-8 self-start px-6 py-2.5 text-sm`}
+              className={`${secondaryButtonClass} mt-8 self-start`}
               href="#admission-form"
             >
-              Apply Now
+              Apply Online Below
             </a>
           </article>
 
-          <article className="rounded-2xl bg-white p-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-10">
-            <h3 className="text-2xl font-bold text-[#3498db]">Eligibility & Requirements</h3>
-            <p className="mt-6 leading-relaxed text-gray-700">
-              Eligibility criteria vary slightly by course. Generally, candidates should meet the
-              following:
-            </p>
-            <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
-              <li>Minimum 10th or 12th pass from a recognized board.</li>
-              <li>Basic computer literacy for digital/software courses.</li>
-              <li>Interest and aptitude for the chosen field.</li>
-            </ul>
-            <p className="mt-8 font-bold text-[#2c3e50]">Required Documents:</p>
-            <ul className="mt-4 list-disc space-y-2 pl-6 leading-relaxed text-gray-700">
-              <li>Photocopy of Aadhar Card / ID Proof</li>
-              <li>Photocopy of Latest Marksheet / Educational Qualification</li>
-              <li>Passport-sized Photographs (2)</li>
-              <li>Any other course-specific documents (will be communicated)</li>
-            </ul>
+          {/* Eligibility & Requirements */}
+          <article className="rounded-2xl bg-white p-8 sm:p-10 border border-slate-200/80 shadow-xs transition-all hover:shadow-lg">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-white font-bold">
+                2
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
+                Eligibility & Checklist
+              </h3>
+            </div>
+
+            <div className="space-y-6 text-sm sm:text-base leading-relaxed text-slate-600">
+              <div>
+                <h4 className="font-bold text-slate-900 mb-2">Eligibility Criteria:</h4>
+                <ul className="space-y-2 pl-2">
+                  <li className="flex items-center gap-2">
+                    <span className="text-emerald-600 font-bold">✓</span>
+                    <span>Minimum 10th or 12th pass from any recognized board.</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-emerald-600 font-bold">✓</span>
+                    <span>Basic computer literacy for digital & software programs.</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-emerald-600 font-bold">✓</span>
+                    <span>Enthusiasm and commitment to hands-on practical learning.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="border-t border-slate-100 pt-4">
+                <h4 className="font-bold text-slate-900 mb-2">Required Documents:</h4>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-2 text-xs sm:text-sm">
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Photocopy of Aadhaar Card / ID</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Educational Marksheets</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>2 Passport-Sized Photographs</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="text-blue-600 font-bold">•</span>
+                    <span>Category / Certificate (if any)</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </article>
         </div>
 
-        <div className="mt-20 border-t border-gray-200 pt-12 text-center">
-          <h3 className="text-3xl font-bold text-[#2c3e50] md:text-4xl">Ready to Apply?</h3>
-          <p className="mt-4 text-lg text-gray-600">
-            Fill out the form below or reach out to us for personalized assistance!
-          </p>
-        </div>
-
+        {/* Form Container */}
         <div
           id="admission-form"
-          className="mx-auto mt-12 max-w-[700px] scroll-mt-24 rounded-2xl bg-white p-8 shadow-xl sm:p-12"
+          className="mx-auto mt-16 max-w-[760px] scroll-mt-24 rounded-3xl bg-white p-8 sm:p-12 border border-slate-200/80 shadow-xl"
         >
-          <h3 className="mb-8 text-center text-3xl font-bold text-[#3498db]">
-            Online Admission Inquiry
-          </h3>
+          <div className="text-center mb-8">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 border border-blue-200/60 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-600 mb-2">
+              Fast-Track Application
+            </span>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Online Admission Inquiry
+            </h3>
+            <p className="mt-2 text-sm text-slate-600">
+              Submit your details and our senior counselor will call you within 24 hours.
+            </p>
+          </div>
+
           <AdmissionInquiryForm />
         </div>
       </div>

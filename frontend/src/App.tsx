@@ -9,6 +9,7 @@ import { AdminDashboardPage } from "./pages/admin/AdminDashboardPage";
 import { AdminInquiriesPage } from "./pages/admin/AdminInquiriesPage";
 import { AdminLoginPage } from "./pages/admin/AdminLoginPage";
 import { AdminUsersPage } from "./pages/admin/AdminUsersPage";
+import { GalleryPage } from "./pages/GalleryPage";
 import { HomePage } from "./pages/HomePage";
 import { LoginPage } from "./pages/LoginPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
@@ -24,7 +25,7 @@ function ScrollManager() {
       return;
     }
 
-    window.scrollTo({ top: 0 });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [location.pathname, location.hash]);
 
   return null;
@@ -41,6 +42,7 @@ function MainLayout() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/student-login" element={<LoginPage type="student" />} />
         <Route path="/teacher-login" element={<LoginPage type="teacher" />} />
 
@@ -72,4 +74,3 @@ export default function App() {
     </AdminAuthProvider>
   );
 }
-

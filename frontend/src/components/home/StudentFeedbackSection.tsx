@@ -3,23 +3,24 @@ import { SectionHeading } from "../common/SectionHeading";
 
 export function StudentFeedbackSection() {
   return (
-    <section id="student-feedback" className="scroll-mt-20 bg-white py-16 md:py-24 border-t border-gray-100">
-      <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
+    <section id="student-feedback" className="scroll-mt-20 bg-white py-20 md:py-28 border-b border-slate-100">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          title="What Our Students Say"
-          description="Hear from our students about their learning and career journey with Digital Mozo Institute."
+          badge="Testimonials"
+          title="What Our Trainees Say"
+          description="Real experiences and reflections from students who transformed their career trajectories at DigitalMozo Institute."
         />
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {studentFeedbacks.map((item) => (
             <article
               key={item.name}
-              className="group flex flex-col justify-between rounded-2xl border border-gray-100 bg-[#fbfcfd] p-8 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lg hover:border-[#3498db]/30"
+              className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-8 shadow-xs transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-blue-300"
             >
               <div>
                 {/* Top Circular Student Image */}
                 <div className="flex justify-center">
-                  <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-4 border-white ring-4 ring-[#3498db]/20 shadow-md transition-transform duration-300 group-hover:scale-105">
+                  <div className="relative h-20 w-20 sm:h-24 sm:w-24 shrink-0 overflow-hidden rounded-full border-4 border-white ring-4 ring-blue-500/15 shadow-md transition-transform duration-300 group-hover:scale-105">
                     <img
                       className="h-full w-full rounded-full object-cover object-top"
                       src={item.image}
@@ -30,9 +31,9 @@ export function StudentFeedbackSection() {
                 </div>
 
                 {/* Quotation Icon */}
-                <div className="mt-6 flex justify-center text-[#3498db]/40">
+                <div className="mt-5 flex justify-center text-blue-600/30">
                   <svg
-                    className="h-8 w-8"
+                    className="h-7 w-7"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -42,16 +43,17 @@ export function StudentFeedbackSection() {
                 </div>
 
                 {/* Feedback Content */}
-                <p className="mt-4 text-center text-sm leading-relaxed text-gray-600 italic">
-                  “{item.feedback}”
+                <p className="mt-3 text-center text-sm leading-relaxed text-slate-600 italic">
+                  "{item.feedback}"
                 </p>
               </div>
 
               {/* Student Name */}
-              <div className="mt-6 border-t border-gray-100/80 pt-4 text-center">
-                <p className="text-sm font-semibold text-[#2c3e50] tracking-wide">
-                  — {item.name}
+              <div className="mt-6 border-t border-slate-100 pt-4 text-center">
+                <p className="text-sm font-bold text-slate-900 tracking-wide">
+                  {item.name}
                 </p>
+                <p className="text-xs text-blue-600 font-medium">DigitalMozo Alumnus</p>
               </div>
             </article>
           ))}
